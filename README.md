@@ -2,7 +2,7 @@
 
 ![Pico effects](https://appelsiini.net/img/2021/pico-st7735-rotozoom.jpg)
 
-Created to test the [HAGL graphics library](https://github.com/tuupola/hagl). For quick reference see the [recording on Vimeo](https://vimeo.com/510236080). If you cannot compile yourself build directory contains a [recent firmware](https://github.com/tuupola/pico_effects/raw/master/build/firmware.uf2) for Pimoroni display pack.
+Created to test the [HAGL graphics library](https://github.com/tuupola/hagl). For quick reference see the [recording on Vimeo](https://vimeo.com/510236080). If you cannot compile yourself build directory contains a [recent firmware](https://github.com/james-bryant/pico_effects/raw/master/build/firmware.uf2) for Pimoroni display pack.
 
 ## Compile
 
@@ -10,7 +10,7 @@ Below instructions assume you do not have [Raspberry Pi Pico SDK](https://github
 
 ```
 $ git clone --recursive https://github.com/raspberrypi/pico-sdk.git
-$ git clone --recursive  https://github.com/tuupola/pico_effects.git
+$ git clone --recursive  https://github.com/james-bryant/pico_effects
 $ cd pico_effects/build
 $ cmake ..
 $ make -j8
@@ -19,7 +19,7 @@ $ make -j8
 If the SDK is already installed you can pass the installation path manually.
 
 ```
-$ git clone --recursive  https://github.com/tuupola/pico_effects.git
+$ git clone --recursive  https://github.com/james-bryant/pico_effects
 $ cd pico_effects/build
 $ cmake .. -DPICO_SDK_PATH=../pico-sdk
 $ make -j8
@@ -42,6 +42,9 @@ Alternatively you can use picotool to flash the firmware.
 ```
 $ picotool load firmware.uf2 -f
 ```
+
+## Hardware
+
 
 ## Run on computer
 

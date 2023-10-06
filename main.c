@@ -121,6 +121,7 @@ switch_demo()
             plasma_close();
             break;
         case 2:
+            plasma_close();
         case 3:
             deform_close();
             break;
