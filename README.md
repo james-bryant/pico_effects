@@ -1,8 +1,12 @@
-## Old schoold demo effects for Raspberry Pi Pico
+## Multiple Displays for Raspberry Pi Pico
 
-![Pico effects](https://appelsiini.net/img/2021/pico-st7735-rotozoom.jpg)
+![3 display at once](example.png)
 
-Created to test the [HAGL graphics library](https://github.com/tuupola/hagl). For quick reference see the [recording on Vimeo](https://vimeo.com/510236080). If you cannot compile yourself build directory contains a [recent firmware](https://github.com/james-bryant/pico_effects/raw/master/build/firmware.uf2) for Pimoroni display pack.
+Using a modified version of the [HAGL graphics library](https://github.com/Uberfoo-Heavy-Industries/hagl) and [HAGL Pico mipi driver](https://github.com/Uberfoo-Heavy-Industries/hagl_pico_mipi) we can attach 3 or more displays to an RP2040.
+
+If you cannot compile yourself build directory contains a [recent firmware](https://github.com/james-bryant/pico_effects/raw/master/build/firmware.uf2).
+
+Credit for this mostly belongs to [Mika Tuupola](https://github.com/tuupola) who is the original author of all the graphics libraries and example code. My contribution merely consists of modifying the libraries to support multiple displays.
 
 ## Compile
 
@@ -45,10 +49,30 @@ $ picotool load firmware.uf2 -f
 
 ## Hardware
 
+The hardware used in this example is a Raspberry Pi Pico board and the three display modules.
 
-## Run on computer
+The modules I used can be found here: https://www.aliexpress.us/item/2251832728153401.html
+Similar display modules should work as long as you adjust the config parameters accordingly.
 
-HAGL is hardware agnostic. You can run the demos also [on your computer](https://github.com/tuupola/sdl2_effects).
+The following tables has the wiring. All three displays share a SPI port, so the SDA, SCL, and DC pins connect to all three displays.
+
+| Pico Pin | GPIO | display1 Pin | display2 pin | display3 pin |
+|----------|------|--------------|--------------|--------------|
+| 18       |      | VCC          | VCC          | VCC          |
+| 36       |      | GND          | GND          | GND          |
+| 15       | 11   | SDA          | SDA          | SDA          |
+| 14       | 10   | SCL          | SCL          | SCL          |
+| 11       | 8    | DC           | DC           | DC           |
+| 12       | 9    | CS           |              |              |
+| 16       | 12   | RST          |              |              |
+| 7        | 5    |              | CS           |              |
+| 6        | 4    |              | RST          |              |
+| 5        | 3    |              |              | CS           |
+| 4        | 2    |              |              | RST          |
+
+## Future
+
+This project was merely a proof of concept for other projects I'm working on. I do not plan to develop this example project any further short of any bug fixes.
 
 ## License
 
