@@ -56,7 +56,7 @@ target_compile_definitions(firmware PRIVATE
 # There are ready made config files for popular Pico displays.
 #
 
-include("external/hagl_hal/cmake/pimoroni-pico-display-pack.cmake")
+#include("external/hagl_hal/cmake/pimoroni-pico-display-pack.cmake")
 #include("external/hagl_hal/cmake/pimoroni-picosystem.cmake")
 #include("external/hagl_hal/cmake/waveshare-pico-lcd-096.cmake")
 #include("external/hagl_hal/cmake/waveshare-pico-lcd-130.cmake")

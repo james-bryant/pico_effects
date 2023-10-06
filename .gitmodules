@@ -1,6 +1,6 @@
 [submodule "lib/hagl"]
 	path = external/hagl
-	url = https://github.com/tuupola/hagl.git
+	url = https://github.com/Uberfoo-Heavy-Industries/hagl.git
 [submodule "lib/hagl_hal"]
 	path = external/hagl_hal
-	url = https://github.com/tuupola/hagl_pico_mipi
+	url = https://github.com/Uberfoo-Heavy-Industries/hagl_pico_mipi.git
